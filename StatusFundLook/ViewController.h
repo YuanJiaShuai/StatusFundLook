@@ -1,0 +1,14 @@
+//
+//  ViewController.h
+//  StatusFundLook
+//
+//  Created by yjs on 2020/12/30.
+//
+
+#import <Cocoa/Cocoa.h>
+
+@interface ViewController : NSViewController
+
+
+@end
+
