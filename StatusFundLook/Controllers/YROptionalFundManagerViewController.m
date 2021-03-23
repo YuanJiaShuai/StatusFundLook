@@ -12,7 +12,7 @@
 @property (assign, nonatomic) FundManagerType managerType;
 @property (weak) IBOutlet NSTextField *titleLab;
 @property (weak) IBOutlet NSTextField *feTextField;
-
+@property (weak) IBOutlet NSTextField *costTextField;
 @end
 
 @implementation YROptionalFundManagerViewController
@@ -23,9 +23,11 @@
     if(self.managerType == FundManagerType_Delegate){
         self.titleLab.stringValue = @"当前基金已经存在您的自选列表中，您确定要执行删除操作吗？";
         self.feTextField.hidden = YES;
+        self.costTextField.hidden = YES;
     }else{
         self.titleLab.stringValue = @"添加当前基金，请输入您的持有份额，方便盘中估算您的收益，如果不添加，默认份额为0";
         self.feTextField.hidden = NO;
+        self.costTextField.hidden = NO;
     }
 }
 
@@ -45,6 +47,7 @@
     FundModel *model = [[FundModel alloc]init];
     model.fundCode = self.fundModel[@"CODE"];
     model.fFe = self.feTextField.stringValue;
+    model.uCost = self.costTextField.stringValue;
     
     if(self.managerType == FundManagerType_Delegate){
         [[YRFMDBManager sharedManager] delFundModel:model];

@@ -62,7 +62,7 @@
                 NSLog(@"存在");
                 return;
             }else{
-                NSString *sql = [NSString stringWithFormat:@"create table %@(fundCode varchar(255), fFe varchar(255))", FUND_TABLE_NAME];
+                NSString *sql = [NSString stringWithFormat:@"create table %@(fundCode varchar(255), fFe varchar(255), uCost varchar(255))", FUND_TABLE_NAME];
                 BOOL result = [db executeUpdate:sql];
                 if(result){
                     
@@ -121,7 +121,7 @@
 
 - (void)addFundModel:(FundModel *)fundModel{
     [self.queueDb inDatabase:^(FMDatabase * _Nonnull db) {
-        NSString *inserSql = [NSString stringWithFormat:@"INSERT INTO %@ VALUES('%@', '%@')", FUND_TABLE_NAME, fundModel.fundCode, fundModel.fFe];
+        NSString *inserSql = [NSString stringWithFormat:@"INSERT INTO %@ VALUES('%@', '%@', '%@')", FUND_TABLE_NAME, fundModel.fundCode, fundModel.fFe, fundModel.uCost];
         [db executeUpdate:inserSql];
         [db close];
     }];

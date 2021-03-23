@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="YROptionalFundManagerViewController">
             <connections>
+                <outlet property="costTextField" destination="U6h-mf-tVv" id="dOc-Hb-WA6"/>
                 <outlet property="feTextField" destination="ekf-5w-oVP" id="WT9-1a-sFX"/>
                 <outlet property="titleLab" destination="CoM-5s-7lv" id="hyi-8A-7TA"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -46,7 +47,7 @@
                     </constraints>
                     <buttonCell key="cell" type="push" title="取消" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SIv-29-eXr">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                        <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
                         <action selector="cancelButtonClickEvent:" target="-2" id="oFu-yR-RMd"/>
@@ -60,26 +61,40 @@
                     </constraints>
                     <buttonCell key="cell" type="push" title="确定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SHF-bb-gqd">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                        <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
                         <action selector="saveButtonClickEvent:" target="-2" id="QaR-gm-bvH"/>
                     </connections>
                 </button>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U6h-mf-tVv">
+                    <rect key="frame" x="16" y="75" width="298" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="E9b-jB-Jds"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" placeholderString="请输入您单位成本" drawsBackground="YES" id="h63-f1-2Wt">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
+                <constraint firstItem="U6h-mf-tVv" firstAttribute="top" secondItem="ekf-5w-oVP" secondAttribute="bottom" constant="23" id="1Bm-YG-grQ"/>
                 <constraint firstItem="Bdp-1m-M1b" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="32" id="C32-LP-J0B"/>
                 <constraint firstItem="ekf-5w-oVP" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="16" id="DSH-KT-OyL"/>
                 <constraint firstItem="CoM-5s-7lv" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="16" id="GA9-cv-5mo"/>
                 <constraint firstAttribute="bottom" secondItem="Bdp-1m-M1b" secondAttribute="bottom" constant="27" id="VKy-ax-Hn4"/>
                 <constraint firstAttribute="bottom" secondItem="Huo-zS-KuA" secondAttribute="bottom" constant="27" id="XbI-k7-OxF"/>
+                <constraint firstItem="U6h-mf-tVv" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="16" id="axS-X5-pgO"/>
                 <constraint firstItem="ekf-5w-oVP" firstAttribute="top" secondItem="CoM-5s-7lv" secondAttribute="bottom" constant="16" id="bj2-Qp-SZK"/>
                 <constraint firstAttribute="trailing" secondItem="ekf-5w-oVP" secondAttribute="trailing" constant="16" id="ctY-Zm-AmG"/>
                 <constraint firstAttribute="trailing" secondItem="Huo-zS-KuA" secondAttribute="trailing" constant="32" id="dx0-Od-IDb"/>
+                <constraint firstAttribute="trailing" secondItem="U6h-mf-tVv" secondAttribute="trailing" constant="16" id="ggt-Kn-Pad"/>
                 <constraint firstAttribute="trailing" secondItem="CoM-5s-7lv" secondAttribute="trailing" constant="16" id="j9C-fx-v4f"/>
                 <constraint firstItem="CoM-5s-7lv" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="16" id="zbS-Re-j7U"/>
             </constraints>
-            <point key="canvasLocation" x="-212" y="94"/>
+            <point key="canvasLocation" x="-162" y="-52"/>
         </customView>
     </objects>
 </document>

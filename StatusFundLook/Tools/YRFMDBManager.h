@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 份额
 @property (strong, nonatomic) NSString *fFe;
 
+/// 单位成本
+@property (strong, nonatomic) NSString *uCost;
+
 @end
 
 @interface YRFMDBManager : NSObject

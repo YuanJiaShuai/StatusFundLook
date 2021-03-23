@@ -15,16 +15,16 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="237" height="96"/>
+            <rect key="frame" x="0.0" y="0.0" width="235" height="114"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BDk-cM-SRJ">
-                    <rect key="frame" x="10" y="15" width="216" height="72"/>
+                    <rect key="frame" x="10" y="12" width="216" height="93"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="212" id="Ub8-dm-63n"/>
-                        <constraint firstAttribute="height" constant="72" id="gLJ-ch-b0h"/>
+                        <constraint firstAttribute="height" constant="93" id="gLJ-ch-b0h"/>
                     </constraints>
-                    <textFieldCell key="cell" lineBreakMode="charWrapping" alignment="justified" title="估算净值：每个交易日9:30-15:00盘中实时更新，按照基金持仓和指数走势预测当天净值。预估数值不代表真实净值，仅供参考！" id="3jW-EL-LFd">
+                    <textFieldCell key="cell" lineBreakMode="charWrapping" alignment="justified" title="估算净值：每个交易日9:30-15:00盘中实时更新，按照基金持仓和指数走势预测当天净值。预估数值不代表真实净值，仅供参考！T:今日估算收益。Y：昨日收益" id="3jW-EL-LFd">
                         <font key="font" size="13" name="PingFangSC-Thin"/>
                         <color key="textColor" name="666666"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -35,7 +35,7 @@
                 <constraint firstItem="BDk-cM-SRJ" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="9" id="2tJ-9H-Jj6"/>
                 <constraint firstItem="BDk-cM-SRJ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="12" id="Yrn-52-pnD"/>
             </constraints>
-            <point key="canvasLocation" x="-296.5" y="228"/>
+            <point key="canvasLocation" x="-297.5" y="237"/>
         </customView>
     </objects>
     <resources>

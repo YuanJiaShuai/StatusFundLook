@@ -24,6 +24,7 @@
 
 @property (weak) IBOutlet NSTextField *todayProfitLab;
 @property (weak) IBOutlet NSTextField *yesterdayProfitLab;
+@property (weak) IBOutlet NSTextField *allProfitLab;
 
 @property (strong, nonatomic) NSTimer *timer;
 
@@ -58,6 +59,7 @@
 - (void)calculateTodayProfitWithFundArray:(NSArray *)fundArray{
     __block CGFloat todayProfit = 0.0;
     __block CGFloat yestodyProfit = 0.0;
+    __block CGFloat allProfit = 0.0;
     
     NSMutableArray *fCodeArr = [[NSMutableArray alloc]init];
     for(NSDictionary *fundModel in fundArray){
@@ -73,6 +75,9 @@
                     
                     CGFloat yesterdayNetProfit = [fundModel[@"NAV"] doubleValue] - [fundModel[@"NAV"] doubleValue]/(1 + ([fundModel[@"NAVCHGRT"] doubleValue]/100));
                     yestodyProfit = yestodyProfit + [model.fFe doubleValue] * yesterdayNetProfit;
+                    
+                    CGFloat gsz = ([fundModel[@"GSZ"] doubleValue] - [model.uCost doubleValue]);
+                    allProfit = allProfit + [model.fFe doubleValue] * gsz;
                 }
             }
         }
@@ -80,12 +85,16 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             NSString *value = [YRTools unSignDoubleOfValue:todayProfit];
             NSString *yesterdayValue = [YRTools unSignDoubleOfValue:yestodyProfit];
+            NSString *allValue = [YRTools unSignDoubleOfValue:allProfit];
             
             self.todayProfitLab.stringValue = value;
             self.todayProfitLab.textColor = [YRTools colorOfValue:value];
 
             self.yesterdayProfitLab.stringValue = yesterdayValue;
             self.yesterdayProfitLab.textColor = [YRTools colorOfValue:yesterdayValue];
+            
+            self.allProfitLab.stringValue = allValue;
+            self.allProfitLab.textColor = [YRTools colorOfValue:allValue];
         });
     }];
 }
